@@ -23,8 +23,12 @@ public class ProxyHits {
     private static Logger log = Logger.getLogger(ProxyHits.class.getName());
 
     public static void main(String[] args) throws ClientProtocolException, IOException {
-        ProxyHits proxyHits = new ProxyHits();
-        proxyHits.startHits();
+        try {
+            ProxyHits proxyHits = new ProxyHits();
+            proxyHits.startHits();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     
     public static void startHits() throws IOException {
