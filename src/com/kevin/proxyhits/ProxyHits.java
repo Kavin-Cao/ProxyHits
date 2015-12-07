@@ -111,10 +111,15 @@ public class ProxyHits {
             }
         }
 
+        int scount = successLogs.size();
+        int all = successLogs.size() + failedLogs.size();
         failedLogs.addAll(successLogs);
         log.info("共有" + successLogs.size() + "线程执行完毕");
         for (String l : successLogs) {
             log.info(l);
         }
+        
+        log.info("☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆");
+        log.info("共有" + all + "次代理点击执行完毕,其中成功"+scount+"个");
     }
 }
